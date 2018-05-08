@@ -1,0 +1,19 @@
+@import '../../../../variables.scss';
+
+.mapWidget {
+    text-align: center;
+
+    &__title {
+        font-weight: bold;
+    }
+
+    &__mapWrapper {
+        border-radius: $m;
+        overflow: hidden;
+        box-shadow: 0px 0px $xlg $black;
+    }
+
+    &__map {
+        height: 200px;
+    }
+}

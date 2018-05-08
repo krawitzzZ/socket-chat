@@ -1,0 +1,10 @@
+@import '../../../../variables.scss';
+
+.dateWidget {
+    text-align: center;
+
+    &__button {
+        margin-bottom: $sm;
+    }
+}
+

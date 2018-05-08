@@ -1,0 +1,24 @@
+@import '../../../../variables.scss';
+
+.form {
+    &__inputWrapper {
+        width: calc(100% - 80px);
+        padding: 0 $xxxlg 0 $xxlg;
+    }
+
+    .command-btn,
+    .message-btn {
+        position: absolute;
+        padding: $sm;
+    }
+
+    .command-btn {
+        top: 15px;
+        right: 65px;
+    }
+
+    .message-btn {
+        top: 13px;
+        right: $xxlg;
+    }
+}

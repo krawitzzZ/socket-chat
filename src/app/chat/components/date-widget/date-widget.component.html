@@ -1,0 +1,15 @@
+<chat-widget-layout
+    [isVisible]="!widget.isInteracted"
+    [title]="'When do you want to go to the museum?'"
+>
+    <div class="dateWidget">
+        <button
+            *ngFor="let date of dates"
+            (click)="interact(date)"
+            mat-raised-button
+            class="dateWidget__button"
+        >
+            {{ date }}
+        </button>
+    </div>
+</chat-widget-layout>

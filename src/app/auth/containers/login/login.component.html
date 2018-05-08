@@ -1,0 +1,5 @@
+<chat-login-form
+    (submitted)="onSubmit($event)"
+    [pending]="isPending$ | async"
+    [errorMessage]="error$ | async"
+></chat-login-form>

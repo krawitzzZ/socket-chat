@@ -1,0 +1,15 @@
+<chat-widget-layout
+    [isVisible]="!widget.isInteracted"
+    [title]="'Do you really want to exit from the chat?'"
+>
+    <div class="completeWidget">
+        <button
+            *ngFor="let option of options"
+            (click)="interact(option)"
+            mat-raised-button
+            [color]="option.toLowerCase() === 'yes' ? 'warn' : null"
+        >
+            {{ option }}
+        </button>
+    </div>
+</chat-widget-layout>

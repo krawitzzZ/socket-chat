@@ -1,0 +1,29 @@
+<mat-card class="chat">
+    <mat-card-title class="chat__header">Awesome chat</mat-card-title>
+    <mat-divider class="chat__header-divider"></mat-divider>
+
+    <mat-card-content ngx-auto-scroll class="chat__body">
+        <chat-message-list
+            *ngIf="isConnected$ | async; else loader"
+            (widgetInteracted)="onWidgetInteracted($event)"
+            [user]="user$ | async"
+            [chatMessages]="chatMessages$ | async"
+        ></chat-message-list>
+    </mat-card-content>
+
+    <mat-card-footer class="chat__footer">
+        <chat-message-form
+            [isDisabled]="!(isConnected$ | async)"
+            [user]="user$ | async"
+            (messageSent)="onMessageSent($event)"
+            (commandSent)="onCommandSent()"
+        ></chat-message-form>
+    </mat-card-footer>
+</mat-card>
+
+<ng-template #loader>
+    <div class="chat__spinner">
+        <chat-spinner [isVisible]="true"></chat-spinner>
+        <h3>Connecting...</h3>
+    </div>
+</ng-template>

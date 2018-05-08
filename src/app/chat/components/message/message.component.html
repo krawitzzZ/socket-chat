@@ -1,0 +1,10 @@
+<mat-list-item class="message">
+    <div [ngClass]="isOwnedByUser ? 'is-mine' : 'is-not-mine'" class="message__wrapper">
+        <div class="baloon">
+            <div class="baloon__content">
+                <h5 class="baloon__title">{{ message.author }}:</h5>
+                <p class="baloon__text">{{ message.message }}</p>
+            </div>
+        </div>
+    </div>
+</mat-list-item>

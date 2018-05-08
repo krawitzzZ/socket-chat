@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="layout">
+    <span *ngIf="username; else goHome">{{ username }}</span>
+    <button mat-button type="button" (click)="handleAuthAction()">
+        {{ isLoggedIn ? 'Logout' : 'Log in' }}
+    </button>
+</mat-toolbar>
+<ng-content></ng-content>
+
+<ng-template #goHome>
+    <button mat-button type="button" (click)="goToHomePage()">
+        Home
+    </button>
+</ng-template>

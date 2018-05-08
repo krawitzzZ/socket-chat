@@ -1,0 +1,24 @@
+@import '../../../../variables.scss';
+
+.messageFromWidget {
+    padding: $lg;
+    width: 50%;
+    min-width: 250px;
+    margin: $m $lg;
+
+    &__header {
+        display: flex;
+        flex-direction: row
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    &__subtitle {
+        margin-bottom: 0;
+        font-size: 14px;
+        flex-grow: 1;
+    }
+}

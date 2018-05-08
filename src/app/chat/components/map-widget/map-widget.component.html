@@ -1,0 +1,24 @@
+<mat-card class="mapWidget">
+    <mat-card-title class="mapWidget__title">
+        Have you ever been here?
+    </mat-card-title>
+
+    <mat-card-content>
+        <div class="mapWidget__mapWrapper">
+            <agm-map
+                [latitude]="coordinates.lat"
+                [longitude]="coordinates.lng"
+                [disableDoubleClickZoom]="true"
+                [scrollwheel]="false"
+                [zoomControl]="false"
+                [draggable]="false"
+                [fullscreenControl]="false"
+                [keyboardShortcuts]="false"
+                [streetViewControl]="false"
+                class="mapWidget__map"
+            >
+                <agm-marker [latitude]="coordinates.lat" [longitude]="coordinates.lng"></agm-marker>
+            </agm-map>
+        </div>
+    </mat-card-content>
+</mat-card>

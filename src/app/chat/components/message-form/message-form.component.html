@@ -1,0 +1,40 @@
+<ng-container>
+    <form [formGroup]="form" class="form">
+        <mat-form-field floatLabel="never" class="form__inputWrapper">
+            <input
+                (keyup.enter)="sendMessage($event)"
+                matInput
+                placeholder="Write a message..."
+                autocomplete="off"
+                formControlName="message"
+            />
+        </mat-form-field>
+
+        <button
+            (click)="sendCommand($event)"
+            [disabled]="isDisabled"
+            type="button"
+            mat-icon-button
+            color="primary"
+            class="command-btn"
+        >
+            <span position="above" matTooltip="Send command">
+                <mat-icon>chat</mat-icon>
+            </span>
+        </button>
+
+        <button
+            (click)="sendMessage($event)"
+            [disabled]="isDisabled"
+            type="button"
+            mat-icon-button
+            color="primary"
+            class="message-btn"
+        >
+            <span position="above" matTooltip="Send message">
+                <mat-icon>send</mat-icon>
+            </span>
+        </button>
+
+    </form>
+</ng-container>

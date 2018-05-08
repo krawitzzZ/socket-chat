@@ -1,0 +1,81 @@
+@import '../../../../variables.scss';
+
+$mine: desaturate($secondary, 15%);
+$notMine: lighten($black, 45%);
+
+.message {
+    height: auto;
+    margin-bottom: $m;
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        color: $white;
+
+        .baloon {
+            display: inline-block;
+            position: relative;
+            width: 250px;
+            height: auto;
+            border-radius: $xxxlg;
+
+            &:after {
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: $xlg;
+                bottom: auto;
+                border: 12px solid;
+            }
+
+            &__content {
+                padding: $lg $xlg;
+
+            }
+
+            &__title {
+                margin: 0 0 $sm 0;
+                font-size: 16px;
+            }
+
+            &__text {
+                font-size: 14px;
+                -webkit-margin-before: 0;
+                -webkit-margin-after: 0;
+            }
+        }
+
+        &.is-mine {
+            flex-direction: row;
+
+            .baloon {
+                margin-left: $m;
+                background-color: $mine;
+
+                &:after {
+                    right: auto;
+                    left: -$xlg;
+                    top: $xlg;
+                    border-color: $mine $mine transparent transparent;
+                }
+            }
+        }
+
+        &.is-not-mine {
+            flex-direction: row-reverse;
+
+            .baloon {
+                margin-left: $sm;
+                background-color: $notMine;
+
+                &:after {
+                    left: auto;
+                    right: -$lg;
+                    top: $xlg;
+                    border-color: $notMine transparent transparent $notMine;
+                }
+            }
+        }
+    }
+}

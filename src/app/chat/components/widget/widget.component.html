@@ -1,0 +1,28 @@
+<mat-list-item class="widget">
+    <div [ngSwitch]="widget.command?.type" class="widget__wrapper">
+        <ng-container *ngSwitchCase="widgetType.Date">
+            <chat-date-widget
+                [widget]="widget"
+                (interacted)="onWidgetInteracted($event)"
+            ></chat-date-widget>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="widgetType.Map">
+            <chat-map-widget [widget]="widget"></chat-map-widget>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="widgetType.Rate">
+            <chat-rate-widget
+                [widget]="widget"
+                (interacted)="onWidgetInteracted($event)"
+            ></chat-rate-widget>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="widgetType.Complete">
+            <chat-complete-widget
+                [widget]="widget"
+                (interacted)="onWidgetInteracted($event)"
+            ></chat-complete-widget>
+        </ng-container>
+    </div>
+</mat-list-item>

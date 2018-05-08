@@ -1,0 +1,7 @@
+<chat-layout
+    [username]="(user$ | async)?.name"
+    [isLoggedIn]="isLoggedIn$ | async"
+    (logout)="onLogout()"
+>
+    <router-outlet></router-outlet>
+</chat-layout>

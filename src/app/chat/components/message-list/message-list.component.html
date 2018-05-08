@@ -1,0 +1,23 @@
+<mat-list>
+    <ng-container
+        *ngFor="let chatMessage of chatMessages"
+        [ngSwitch]="getChatMessageType(chatMessage)"
+    >
+        <chat-message
+            *ngSwitchCase="messageType.Message"
+            [message]="chatMessage"
+            [isOwnedByUser]="chatMessage.author === user.name"
+        ></chat-message>
+
+        <chat-widget
+            *ngSwitchCase="messageType.Widget"
+            [widget]="chatMessage"
+            (interacted)="onWidgetInteracted($event)"
+        ></chat-widget>
+
+        <chat-message-from-widget
+            *ngSwitchCase="messageType.MessageFromWidget"
+            [message]="chatMessage"
+        ></chat-message-from-widget>
+    </ng-container>
+</mat-list>

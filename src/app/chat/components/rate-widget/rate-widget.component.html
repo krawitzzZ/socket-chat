@@ -1,0 +1,18 @@
+<chat-widget-layout
+    [isVisible]="!widget.isInteracted"
+    [title]="'Please, rate our chat!'"
+>
+    <div class="rateWidget">
+        <button
+            *ngFor="let rate of assessments"
+            (click)="interact(rate)"
+            type="button"
+            mat-icon-button
+            color="accent"
+        >
+            <span position="above" [matTooltip]="rate">
+                <mat-icon>star</mat-icon>
+            </span>
+        </button>
+    </div>
+</chat-widget-layout>
